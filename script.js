@@ -48,17 +48,13 @@ const pokemons = [
     { name: 'Mewtwo', type: 'Psy', level: 70, img: 'mewtwo.png' }
 ];
 
+const pokemonEL = document.querySelector("div.pokemon-container");
+
 function displayPokemons() {
-    const pokemonsContainer = document.getElementById('div.pokemons-container');
-
-    pokemons.forEach(pokemon => {
-        const pokemonPara = document.createElement('p')
-        pokemonPara.innerHTML = pokemon.name;
-        localStorage.removeItem('.pokemon-container');
-
-        if (pokemons.empty) {
-            `Dracaufeu a tout brûlé, aucun Pokémon ne correspond à ta recherche !`
-        }
-    })
-
+    for (let pokemon of pokemons) {
+        let cartePokemon = `<p> ${pokemon.name} </p>`;
+        pokemonEL.innerHTML += cartePokemon;
+    }
 }
+
+displayPokemons();
